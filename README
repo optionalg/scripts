@@ -1,0 +1,21 @@
+mirror-scripts/
+  Scripts to mirror popular projects on a private mirror on your LAN.
+  See mirror-scripts/README for more info.
+
+cointoss.pl
+  For when you just can't find a quarter.
+
+jboss.sh
+  Init script to control JBoss AS. Really just used to ensure it starts on boot.
+
+mysql_backup.sh
+  Runs mysqldump against a list of databases and gzip's the result
+
+puppet-dashboard-workers.sh
+  Starts/stops the delayed_job workers for Puppet Dashboard. Finished writing
+  this then realized that Puppet Labs distributes an init script along with
+  the Puppet Dashboard download.
+
+snapshotsenum.pl
+  A basic script to enumerate snapshots in VMware vSphere and (optionally)
+  delete them. Has a few flaws though.
