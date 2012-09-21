@@ -20,5 +20,5 @@ for db in $DATABASES; do
 done
 
 # Remove any backups older than $RETENTION_DAYS
-find $DESTDIR -type f -name "*.sql.gz" -mtime +$RETENTION_DAYS | xargs rm
+find $DESTDIR -type f -name "*.sql.gz" -mtime +$RETENTION_DAYS -exec rm -f {} \;
 
