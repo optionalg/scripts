@@ -11,6 +11,10 @@ jboss.sh
 mysql_backup.sh
   Runs mysqldump against a list of databases and gzip's the result
 
+nessus-reporter.pl
+  Accepts a .nessus v2 file as input and returns per-host vulnerability counts,
+  categorized by crit/high/med/low.
+
 puppet-dashboard-workers.sh
   Starts/stops the delayed_job workers for Puppet Dashboard. Finished writing
   this then realized that Puppet Labs distributes an init script along with
