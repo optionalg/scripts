@@ -25,7 +25,7 @@ else {
 sub main {
   my $low_total = my $med_total = my $high_total = my $crit_total = 0;
 
-  my $in = XMLin($file);
+  my $in = XMLin($file, forcearray => [ qw/ReportItem Severity/ ]);
   #print Dumper($in);
 
   if($output_csv) {
