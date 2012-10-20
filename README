@@ -20,6 +20,5 @@ puppet-dashboard-workers.sh
   this then realized that Puppet Labs distributes an init script along with
   the Puppet Dashboard download.
 
-snapshotsenum.pl
-  A basic script to enumerate snapshots in VMware vSphere and (optionally)
-  delete them. Has a few flaws though.
+vmware/
+  Various VMware management scripts written using the vSphere SDK for Perl.
