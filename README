@@ -2,8 +2,14 @@ mirror-scripts/
   Scripts to mirror popular projects on a private mirror on your LAN.
   See mirror-scripts/README for more info.
 
+vmware/
+  Various VMware management scripts written using the vSphere SDK for Perl.
+
 cointoss.pl
   For when you just can't find a quarter.
+
+csv_to_wikitable.pl
+  Converts CSV and other delimited spreadsheets to wiki syntax.
 
 jboss.sh
   Init script to control JBoss AS. Really just used to ensure it starts on boot.
@@ -16,9 +22,4 @@ nessus-reporter.pl
   categorized by crit/high/med/low.
 
 puppet-dashboard-workers.sh
-  Starts/stops the delayed_job workers for Puppet Dashboard. Finished writing
-  this then realized that Puppet Labs distributes an init script along with
-  the Puppet Dashboard download.
-
-vmware/
-  Various VMware management scripts written using the vSphere SDK for Perl.
+  Starts/stops the delayed_job workers for Puppet Dashboard.
