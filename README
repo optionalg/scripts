@@ -5,6 +5,10 @@ mirror-scripts/
 vmware/
   Various VMware management scripts written using the vSphere SDK for Perl.
 
+cisco_config_mgr.pl
+  Uploads/downloads config files to/from Cisco network devices using SNMP
+  and the Cisco::CopyConfig CPAN module. 
+
 cointoss.pl
   For when you just can't find a quarter.
 
