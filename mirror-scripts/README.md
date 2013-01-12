@@ -11,8 +11,9 @@ internally we use CentOS 5 and 6 and have no need to mirror prior releases.
 As distributed, these scripts are NOT SUITABLE FOR BECOMING A PUBLIC MIRROR.
 They should be modified to meet the specifications of the project you're
 mirroring if you intend to:
-1. fully mirror a project or repository
-2. become a public mirror
+
+1.   fully mirror a project or repository
+2.   become a public mirror
 
 See the MIRRORING section below.
 
