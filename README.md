@@ -15,9 +15,6 @@ Uploads/downloads config files to/from Cisco network devices using SNMP and the 
 ####csv\_to\_wikitable.pl
 Converts CSV and other delimited spreadsheets to wiki syntax.
 
-####jboss.sh
-Init script to control JBoss AS. Really just used to ensure it starts on boot.
-
 ####mysql\_backup.sh
 Runs mysqldump against a list of databases and gzip's the result
 
