@@ -2,21 +2,25 @@
 # mysql_backup.sh
 # Connects to a mysql server and runs mysqldump on all databases
 
+# Options
 DESTDIR="/root/mysql_backup"
 USR="root"
-PW="***"
+PW="root_pw"
 HOST="localhost"
 RETENTION_DAYS=7
-DATABASES="db1 db2 mysql"
 
 # Create the $DESTDIR if it doesn't already exist
 [ ! -d $DESTDIR ] && mkdir $DESTDIR || :
 
+# Populate all databases on the system
+DATABASES=`/usr/bin/mysql -u $USR -h $HOST -p$PW -Bse 'show databases'`
+
 # Run mysqldump against each database listed in $DATABASES
 for db in $DATABASES; do
-    DATETIME=`date +%Y%m%d_%H%M%S`
-    mysqldump -u $USR -h $HOST -p$PW $db | gzip -9 > $DESTDIR/$HOST\_$db\_$DATETIME.sql.gz
-    chmod 0600 $DESTDIR/$HOST\_$db\_$DATETIME.sql.gz
+    datetime=`date +%Y%m%d_%H%M%S`
+    /usr/bin/mysqldump --skip-lock-tables -u $USR -h $HOST -p$PW $db | \
+        gzip -9 > ${DESTDIR}/${HOST}_${db}_${datetime}.sql.gz
+    chmod 0600 ${DESTDIR}/${HOST}_${db}_${datetime}.sql.gz
 done
 
 # Remove any backups older than $RETENTION_DAYS
