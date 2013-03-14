@@ -3,6 +3,9 @@ These are various scripts I've written.
 ####cointoss/
 Simple cointoss simulation written in various languges.
 
+####init/
+Scripts to control utilities starting/stopping, written with chkconfig in mind.
+
 ####mirror-scripts/
 Scripts to mirror popular projects on a private mirror on your LAN. See mirror-scripts/README for more info.
 
@@ -23,6 +26,3 @@ Accepts a .nessus v2 file as input and returns per-host vulnerability counts, ca
 
 ####print\_rfc1918\_networks.pl
 Takes a Cisco routing table (such as `sh ip bgp`) and prints only the RFC 1918 networks.
-
-####puppet-dashboard-workers.sh
-Starts/stops the delayed\_job workers for Puppet Dashboard.
