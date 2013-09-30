@@ -33,35 +33,35 @@ my $snapshots_exist = 0;
 print "\nFinding snapshots...\n";
 my $vm_in_inv = Vim::find_entity_views(view_type => 'VirtualMachine');
 foreach(@$vm_in_inv) {
-	my $snapshots = $_->snapshot;
-	if(defined $snapshots) {
-		$snapshots_exist++;
-		print "Snapshots exist for virtual machine " . $_->name . "\n";
-	}
+    my $snapshots = $_->snapshot;
+    if(defined $snapshots) {
+        $snapshots_exist++;
+        print "Snapshots exist for virtual machine " . $_->name . "\n";
+    }
 }
 if($snapshots_exist) {
-	print "\n\nWould you like to remove all snapshots? [yes/NO]: ";
-	my $remove_snapshots = <>;
-	chomp $remove_snapshots;
-	if($remove_snapshots =~ /[yes|y|Y]/) {
-		foreach(@$vm_in_inv) {
-			my $snapshots = $_->snapshot;
-			if(defined $snapshots) {
-				eval {
-					print "\nRemoving snapshots for " . $_->name . " ... ";
-					$_->RemoveAllSnapshots();
-					$@ ? print "Failed.\n" : print "Done.\n";
-				}
-			}
-		}
-		print "\n";
-	}
-	else {
-		print "\nNot removing snapshots.\n\n";
-	}
+    print "\n\nWould you like to remove all snapshots? [yes/NO]: ";
+    my $remove_snapshots = <>;
+    chomp $remove_snapshots;
+    if($remove_snapshots =~ /[yes|y|Y]/) {
+        foreach(@$vm_in_inv) {
+            my $snapshots = $_->snapshot;
+            if(defined $snapshots) {
+                eval {
+                    print "\nRemoving snapshots for " . $_->name . " ... ";
+                    $_->RemoveAllSnapshots();
+                    $@ ? print "Failed.\n" : print "Done.\n";
+                }
+            }
+        }
+        print "\n";
+    }
+    else {
+        print "\nNot removing snapshots.\n\n";
+    }
 }
 else {
-	print "\nNo snapshots were found.\n\n";
+    print "\nNo snapshots were found.\n\n";
 }
 
 Util::disconnect();
