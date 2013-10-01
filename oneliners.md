@@ -1,11 +1,11 @@
 ## One-liners (and other misc commands)
 These are a collection of one-liners and other various commands that I've found useful at one point or another.
 
-### List top 10 processes by memory used
-    ps aux --sort=-rss | head -10
-
 ### List top 10 processes by percent of CPU used
     ps aux --sort=-pcpu | head -10
+
+### List top 10 processes by memory used
+    ps aux --sort=-rss | head -10
 
 ### List all users' crontabs
     for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; echo; done
@@ -21,10 +21,6 @@ These are a collection of one-liners and other various commands that I've found 
 
 ### Remove password from private key
     openssl rsa -in priv.key.pem -out priv_nopass.key.pem
-
-### Read and write SNMP
-    snmpwalk -c read_community -v 1 [IP or hostname] [OID]
-    snmpset -c write_community -v 1 [IP or hostname] sysLocation.0 string [value]
 
 ### Find and remove '\*.log' files older than 7 days
     find . -type f -name '*.log' -mtime +7 -exec rm -f {} \;
