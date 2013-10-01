@@ -1,13 +1,11 @@
 ## One-liners (and other misc commands)
 These are a collection of one-liners and other various commands that I've found useful at one point or another.
 
-### List top 10 processes by percent of physical memory used
-    ps aux | awk '{print $4,$2,$1,$11}' | uniq -c | \
-    awk '{print $2 "%\t" $3 "\t" $4 "\t" $5}' | sort -nr | head -n 10
+### List top 10 processes by memory used
+    ps aux --sort=-rss | head -10
 
 ### List top 10 processes by percent of CPU used
-     ps aux | awk '{print $3,$2,$1,$11}' | uniq -c | \
-     awk '{print $2 "%\t" $3 "\t" $4 "\t" $5}' | sort -nr | head -n 10
+    ps aux --sort=-pcpu | head -10
 
 ### List all users' crontabs
     for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; echo; done
