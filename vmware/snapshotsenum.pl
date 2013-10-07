@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 # snapshotsenum.pl
 # Enumerates vSphere snapshots and prompts the user to delete them.
 
@@ -12,6 +12,7 @@
 #  . List the names of the snapshots that are present for each VM so the
 #    admin can make an informed decision on if they can be deleted.
 
+#use warnings;
 use strict;
 use VMware::VIRuntime;
 
