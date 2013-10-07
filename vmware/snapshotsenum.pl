@@ -1,4 +1,4 @@
-#/usr/bin/perl -w
+#!/usr/bin/perl -w
 # snapshotsenum.pl
 # Enumerates vSphere snapshots and prompts the user to delete them.
 
