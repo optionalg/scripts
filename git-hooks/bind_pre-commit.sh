@@ -5,7 +5,7 @@
 # Check that the necessary tools are in our $PATH
 which named-checkzone > /dev/null 2>&1 || exit 1
 
-# Operate on each Puppet manifest (*.pp) in this repo
+# Operate on each zone file (*.db) in this repo
 for file in $(git diff --cached --name-only --diff-filter=ACM -- '*.db'); do
     zone=`echo ${file} | perl -pe 's/(.*)\.db/$1/'`
     named-checkzone $zone $file
