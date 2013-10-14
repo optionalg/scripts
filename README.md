@@ -25,8 +25,5 @@ Runs mysqldump against a list of databases and gzip's the result
 ####nessus-reporter.pl
 Accepts a .nessus v2 file as input and returns per-host vulnerability counts, categorized by crit/high/med/low.
 
-####oneliners.markdown
-Oneliners and other various commands.
-
 ####print\_rfc1918\_networks.pl
 Takes a Cisco routing table (such as `sh ip bgp`) and prints only the RFC 1918 networks.
